@@ -4,7 +4,6 @@ version = "1.0.0"
 description = "Bewise task 1"
 authors = ["hecronk <damiraminov1@yandex.ru>"]
 readme = "README.md"
-packages = [{include = "bewise_task_1"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"

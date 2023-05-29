@@ -2,13 +2,20 @@ version: "3"
 
 services:
   api:
-    restart: always
     build:
       context: .
       dockerfile: Dockerfile
     container_name: api
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
     ports:
       - "5000:5000"
+    depends_on:
+      - postgres
   postgres:
     image: postgres:15
     restart: unless-stopped
@@ -17,5 +24,8 @@ services:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - POSTGRES_DB
+      - PGDATA=/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - ./pgdata:/var/lib/postgresql/data

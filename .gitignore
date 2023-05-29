@@ -168,3 +168,6 @@ instance/*
 
 # Pycharm
 .idea
+
+# Database Storage
+pgdata
