@@ -19,7 +19,9 @@ class QuizzQuestion(Base):
     local_uploaded_at = db.Column(db.DateTime, default=db.func.now())
 
     category_id = db.Column(db.Integer, db.ForeignKey("quizz_category.id"))
-    category = db.relationship("QuizzCategory", backref=db.backref("questions", lazy=True))
+    category = db.relationship(
+        "QuizzCategory", backref=db.backref("questions", lazy=True)
+    )
 
     def __repr__(self):
         return f"<QuizzQuestion {self.question}>"

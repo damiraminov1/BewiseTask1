@@ -20,6 +20,7 @@ optional = true
 
 [tool.poetry.group.dev.dependencies]
 setuptools = "^67.8.0"
+black = "^23.3.0"
 
 [tool.poetry.group.production]
 optional = true
