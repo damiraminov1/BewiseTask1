@@ -1,6 +1,6 @@
 # Bewise Task 1
 
-# Docker Deploy [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-311/)
+## Docker Deploy [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-311/)
 
 ### 1. Create .env file with variables below:
 ```dotenv
@@ -16,7 +16,7 @@ docker-compose up -d
 ```
 
 
-# Development [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-311/)
+## Development [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-311/)
 
 ### 1. Install [PostgreSQL](https://www.postgresql.org/)
 
@@ -48,7 +48,7 @@ poetry run flask db upgrade
 poetry run flask run
 ```
 
-# Usage
+## Usage
 ### 1. Send the number of questions for the quiz:
 ```shell
 curl --location 'http://127.0.0.1:5000/quizzes/' \
