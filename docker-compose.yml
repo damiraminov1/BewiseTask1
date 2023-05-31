@@ -1,11 +1,11 @@
-version: "3"
+version: "3.8"
 
 services:
   api:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: api
+    container_name: api-task1
     restart: unless-stopped
     env_file: .env
     environment:
@@ -15,7 +15,8 @@ services:
     ports:
       - "5000:5000"
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
   postgres:
     image: postgres:15
     restart: unless-stopped
@@ -29,3 +30,8 @@ services:
       - "5432:5432"
     volumes:
       - ./pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "$POSTGRES_DB", "-U", "$POSTGRES_USER" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5

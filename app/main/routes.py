@@ -1,10 +1,10 @@
 import json
 
-from flask import request, jsonify
-from sqlalchemy import func, desc
+from flask import request
+from sqlalchemy import desc
 
 from app import db
-from app.models import QuizzQuestion, QuizzCategory
+from app.models import QuizzQuestion
 from app.main import bp
 from app.serializers import QuizzCategorySerializer, QuizzQuestionSerializer
 from app.services import JServiceAPI
@@ -18,7 +18,7 @@ from app.services import JServiceAPI
 )
 def get_quizzes_route():
     user_data: dict = json.loads(request.data.decode("utf-8"))
-    count: int = user_data["question_num"]
+    count: int = user_data.get("question_num")
     questions: list[dict] = list(dict())
 
     while True:
@@ -57,4 +57,4 @@ def get_quizzes_route():
             )
         )
         db.session.commit()
-    return QuizzQuestionSerializer().dumps(last_question)
+    return QuizzQuestionSerializer().dumps(last_question), 200
