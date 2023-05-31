@@ -59,8 +59,17 @@ curl --location 'http://127.0.0.1:5000/quizzes/' \
 ```
 ### Answer:
 ```json
-{"category": 231, "answer": "Black Sea", "question": "Name of this sea is said to allude not to its dark water but its
-storms", "local_uploaded_at": "2023-05-29T19:35:17.822564", "value": 300, "invalid_count": null, "game_id": 3067, "id":
-3656, "updated_at": "2022-12-30T18:39:05.730000", "created_at": "2022-12-30T18:39:05.730000", "airdate":
-"1985-11-19T20:00:00"}
+{
+    "category": 5302,
+    "answer": "Alexander Graham Bell",
+    "question": "He's the 19th century inventor seen here",
+    "local_uploaded_at": "2023-05-31T20:47:15.148101",
+    "value": 100,
+    "invalid_count": null,
+    "game_id": 1115,
+    "id": 60992,
+    "updated_at": "2022-12-30T19:03:56.441000",
+    "created_at": "2022-12-30T19:03:56.441000",
+    "airdate": "1999-02-11T20:00:00"
+}
 ```
