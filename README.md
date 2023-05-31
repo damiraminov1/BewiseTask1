@@ -1,6 +1,6 @@
 # Bewise Task 1
 
-## Docker Deploy [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-311/)
+## Docker Deploy
 
 ### 1. Create .env file with variables below:
 ```dotenv
